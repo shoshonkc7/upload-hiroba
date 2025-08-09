@@ -1,0 +1,193 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  margin: 0; padding: 0;
+  color: #222;
+}
+header {
+  background: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+#uploadLabel {
+  background: #eaeaea;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+#uploadLabel:hover {
+  background: #d0d0d0;
+}
+main {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.filters input[type="text"], .filters select {
+  flex-grow: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+}
+#filesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(140px,1fr));
+  gap: 1rem;
+}
+.fileCard {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.1);
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+.fileCard:hover {
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.15);
+}
+.preview {
+  background: #f0f0f0;
+  border-radius: 0.4rem;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+.preview img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.fileName {
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fileSize {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 0.15rem;
+}
+.tags {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+.tag {
+  background: #eee;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  color: #555;
+  user-select: none;
+}
+/* Modal */
+#modalBg {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+#modalBg.active {
+  display: flex;
+}
+#modalContent {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem 2rem;
+  max-width: 450px;
+  width: 90vw;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.2);
+  position: relative;
+}
+#modalContent img {
+  max-width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  background: #f9f9f9;
+}
+#modalCloseBtn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #555;
+}
+#modalContent h2 {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+}
+#modalContent p {
+  font-size: 0.9rem;
+  color: #444;
+  margin: 0.2rem 0;
+}
+#modalActions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+#modalActions button, #modalActions a {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+}
+#downloadBtn {
+  background-color: #3b82f6;
+  color: white;
+}
+#copyBtn {
+  background-color: #10b981;
+  color: white;
+}
+#downloadBtn:hover {
+  background-color: #2563eb;
+}
+#copyBtn:hover {
+  background-color: #059669;
+}
+/* Icons fallback */
+.icon-file {
+  width: 48px;
+  height: 48px;
+  fill: #bbb;
+}
