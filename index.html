@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>絵文字共有広場</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <h1>絵文字ダウンローダー</h1>
+  <label id="uploadLabel" for="fileInput">ファイルをアップロード</label>
+  <input id="fileInput" type="file" style="display:none" />
+</header>
+<main>
+  <div class="filters">
+    <input type="text" id="searchInput" placeholder="検索...（ファイル名）" autocomplete="off" />
+    <select id="tagSelect">
+      <option value="">全てのタグ</option>
+    </select>
+  </div>
+  <div id="filesGrid" aria-live="polite" aria-label="ファイル一覧"></div>
+</main>
+
+<div id="modalBg" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div id="modalContent">
+    <button id="modalCloseBtn" aria-label="閉じる">&times;</button>
+    <img id="modalPreview" alt="ファイルのプレビュー" />
+    <h2 id="modalTitle"></h2>
+    <p id="modalSize"></p>
+    <p id="modalTags"></p>
+    <div id="modalActions">
+      <a id="downloadBtn" href="#" download>ダウンロード</a>
+      <button id="copyBtn">URLコピー</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
